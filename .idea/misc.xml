@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/devMode" />
     <file type="web" url="file://$PROJECT_DIR$/Mybatis" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
   </component>
@@ -9,6 +10,7 @@
       <list>
         <option value="$PROJECT_DIR$/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/devMode/pom.xml" />
       </list>
     </option>
   </component>
