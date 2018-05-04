@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.mybatis.dao.UserDao">
+    <!--parameterType:标出是什么类型的参数-->
+    <insert id="insertUser" parameterType="user">
+        insert into [user](user_id,user_password,user_nickname)values(#{userId,jdbcType=INTEGER},#{userPassword,jdbcType=VARCHAR},#{userNickName,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from [user] where user_id = #{userId}
+    </delete>
+
+    <update id="updateUser" parameterType="user">
+        update [user] set user_nickName = #{userNickName},user_password=#{userPassword} where user_id = #{userId}
+    </update>
+
+    <!--resultType结果映射成什么样的类型-->
+    <select id="getUser" parameterType="int" resultType="user">
+        select user_id ,user_nickname from [user] where user_id = #{userId}
+    </select>
+
+    <!--mybatis模糊查询-->
+    <select id="findUserj" parameterType="string" resultType="user">
+        select user_id ,user_password , user_nickname as userId , userPassword,userNickName from [user] where user_nickname like concat('%'#{user_nickname}'%')
+    </select>
+</mapper>
