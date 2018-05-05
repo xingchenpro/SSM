@@ -5,25 +5,25 @@ package com.learn.mybatis.pojo;
  * @date :2018/5/4
  */
 public class User {
-    private int userId;
+    private String userRegisterId;
     private String userPassword;
     private String userNickName;
 
     public User() {
     }
 
-    public User(int userId, String userPassword, String userNickName) {
-        this.userId = userId;
+    public User(String userRegisterId, String userPassword, String userNickName) {
+        this.userRegisterId = userRegisterId;
         this.userPassword = userPassword;
         this.userNickName = userNickName;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserId() {
+        return userRegisterId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserId(String userRegisterId) {
+        this.userRegisterId = userRegisterId;
     }
 
     public String getUserPassword() {
@@ -45,7 +45,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
+                "userRegisterId=" + userRegisterId +
                 ", userPassword=" + userPassword +
                 ", userNickName='" + userNickName + '\'' +
                 '}';

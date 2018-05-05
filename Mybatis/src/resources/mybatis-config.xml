@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--setting-->
+    <settings>
+        <!--是否开启自动峰驼命名规则-->
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+    </settings>
     <!--别名，可以用这个别名代替这个类-->
     <typeAliases>
         <typeAlias type="com.learn.mybatis.pojo.User" alias="user" ></typeAlias>
@@ -14,7 +19,7 @@
             <!--POOLED代表采用内部提供的连接池方式-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-                <property name="url" value="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=ssm"/>
+                <property name="url" value="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=MidnightSun"/>
                 <property name="username" value="sa"/>
                 <property name="password" value="abc123456*"/>
             </dataSource>
