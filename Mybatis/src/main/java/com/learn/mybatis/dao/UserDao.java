@@ -21,8 +21,6 @@ public interface UserDao {
 
     public int deleteUser(String userRegisterId);
 
-    public int updateUser(User user);
-
     public User getUser(String userRegisterId);
 
     public List<User> findUser(String userNickName);
@@ -32,7 +30,7 @@ public interface UserDao {
     public List<User> findUserIdAndNick(Map<String ,Object> IdAndNickMap);
 
     //@Param多参数查询,@Param给参数命名，代替pojo名字，根据名字得到参数值，传到Sql中
-    public List<User> findUserBaseIdANDNick(@Param("userRegisterId") String userRegisterId,@Param("userNick") String userNickNam);
+    public List<User> findUserBaseIdAndNick(@Param("userRegisterId") String userRegisterId,@Param("userNick") String userNickNam);
 
     //JavaBean传递多个参数,可以另外定义一个参数的pojo
     public List<User> findUserByBean(User user);
@@ -44,4 +42,7 @@ public interface UserDao {
 
     //分页参数RowBounds
     public List<User> findByRowBounds(@Param("uNick")String userNickName, RowBounds rowBounds);
+
+    //更新角色
+    public int  updateUser(User user);
 }

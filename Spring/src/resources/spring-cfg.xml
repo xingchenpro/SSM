@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--处理所有的bean-->
+    <bean id="beanPostProcessor" class="com.hly.spring.pojo.BeanPostProcessorImpl"/>
+
+    <bean id="source" class="com.hly.spring.pojo.Source">
+    <property name="fruit" value="橙汁"/><!--property:构造方法的参数-->
+    <property name="sugar" value="无糖"/>
+    <property name="size" value="3"/>
+</bean>
+
+    <!--自定义初始化和销毁方法-->
+    <bean id="juiceMaker" class="com.hly.spring.pojo.JuiceMaker" init-method="init" destroy-method="destroy">
+        <property name="beverageShop" value="避风塘"/>
+        <property name="source" ref="source"/><!--ref:引用之前定义的bean-->
+    </bean>
+</beans>

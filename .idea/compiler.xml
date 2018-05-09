@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="devMode" />
         <module name="Mybatis" />
+        <module name="Spring" />
         <module name="SpringMVC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="devMode" target="1.7" />
       <module name="Mybatis" target="1.7" />
+      <module name="Spring" target="1.7" />
       <module name="SpringMVC" target="1.7" />
     </bytecodeTargetLevel>
   </component>
