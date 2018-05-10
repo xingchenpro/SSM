@@ -1,4 +1,4 @@
-package com.hly.spring.pojo;
+package com.hly.spring.pojo.springIOC;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
@@ -12,7 +12,7 @@ import org.springframework.context.ApplicationContextAware;
 public class JuiceMaker implements BeanNameAware ,BeanFactoryAware,ApplicationContextAware,InitializingBean,DisposableBean{
 
     private  String beverageShop = null;
-    private  Source source;
+    private Source source;
     public void init(){
         System.out.println("【"+this.getClass().getSimpleName()+"】"+"执行自定义初始化方法");
     }

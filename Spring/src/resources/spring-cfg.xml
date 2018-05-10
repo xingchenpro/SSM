@@ -4,17 +4,79 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--处理所有的bean-->
-    <bean id="beanPostProcessor" class="com.hly.spring.pojo.BeanPostProcessorImpl"/>
+    <bean id="beanPostProcessor" class="com.hly.spring.pojo.springIOC.BeanPostProcessorImpl"/>
 
-    <bean id="source" class="com.hly.spring.pojo.Source">
+    <bean id="source" class="com.hly.spring.pojo.springIOC.Source">
     <property name="fruit" value="橙汁"/><!--property:构造方法的参数-->
     <property name="sugar" value="无糖"/>
     <property name="size" value="3"/>
 </bean>
 
     <!--自定义初始化和销毁方法-->
-    <bean id="juiceMaker" class="com.hly.spring.pojo.JuiceMaker" init-method="init" destroy-method="destroy">
+    <bean id="juiceMaker" class="com.hly.spring.pojo.springIOC.JuiceMaker" init-method="init" destroy-method="destroy">
         <property name="beverageShop" value="避风塘"/>
         <property name="source" ref="source"/><!--ref:引用之前定义的bean-->
     </bean>
+
+    <!--构造器注入-->
+    <!--constructor-arg index="0" value="1":构造方法，第一个参数(参数位置)，值为1-->
+    <bean id="user1" class="com.hly.spring.pojo.springBean.User">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="hly"/>
+        <constructor-arg index="2" value="123"/>
+    </bean>
+
+    <!--setter注入-->
+    <!--property:参数名字-->
+    <bean id="user2" class="com.hly.spring.pojo.springBean.User" scope="prototype">
+    <property name="userId" value="1"/>
+    <property name="userName" value="hly"/>
+    <property name="userPassword" value="123"/>
+</bean>
+
+    <!--装配集合-->
+    <bean id="complexAssemble" class="com.hly.spring.pojo.springBean.ComplexAssemble">
+        <property name="id" value="1"/>
+        <property name="list">
+            <list>
+                <!--多个value元素设置值-->
+                <value>value-1ist-1</value>
+                <value>value-1ist-2</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <!--entry元素设置值，包含一个键和一个值得设置-->
+                <entry key="key1" value="value-key-1"/>
+                <entry key="key2" value="value-key-2"/>
+                <!--应用bean用的是key-ref,value-ref-->
+            </map>
+        </property>
+        <property name="props">
+            <props>
+                <prop key="prop1">values-1</prop>
+                <prop key="prop2">values-2</prop>
+            </props>
+        </property>
+        <property name="set">
+            <set>
+                <value>values1</value>
+                <value>values2</value>
+            </set>
+        </property>
+        <property name="arrays">
+            <array>
+                <value>value-array-1</value>
+                <value>value-array-2</value>
+            </array>
+        </property>
+        <property name="listUser">
+            <list>
+                <!--引用之前定义的bean-->
+                <ref bean="user2"/>
+            </list>
+        </property>
+    </bean>
+
+
 </beans>
