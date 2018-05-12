@@ -1,4 +1,4 @@
-package com.hly.spring.pojo.springBean;
+package com.hly.spring.SpringIOC.pojo;
 
 import java.util.List;
 import java.util.Map;
@@ -7,9 +7,9 @@ import java.util.Set;
 
 /**
  * @author :hly
- * @date :2018/5/9
+ * @date :2018/5/12
  */
-public class ComplexAssemble {
+public class BeanComplexAssemble {
     private Long id;
     private List<String> list;
     private Map<String,String> map;
@@ -17,14 +17,14 @@ public class ComplexAssemble {
     private Properties props;
     private Set<String> set;
     private String[]arrays;
-    private List<User> listUser;
+    private List<BeanUser> listBeanUser;
 
-    public List<User> getListUser() {
-        return listUser;
+    public List<BeanUser> getListBeanUser() {
+        return listBeanUser;
     }
 
-    public void setListUser(List<User> listUser) {
-        this.listUser = listUser;
+    public void setListBeanUser(List<BeanUser> listBeanUser) {
+        this.listBeanUser = listBeanUser;
     }
 
     public Long getId() {

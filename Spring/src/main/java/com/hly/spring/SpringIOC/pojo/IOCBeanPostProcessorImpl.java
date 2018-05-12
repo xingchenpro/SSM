@@ -1,4 +1,4 @@
-package com.hly.spring.pojo.springIOC;
+package com.hly.spring.SpringIOC.pojo;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * @author :hly
  * @date :2018/5/9
  */
-public class BeanPostProcessorImpl implements BeanPostProcessor {
+public class IOCBeanPostProcessorImpl implements BeanPostProcessor {
     //bean.getClass().getSimpleName()
-    //Bean实现了这个方法就会调用这个方法
+    //Bean装配了这个方法就会调用这个方法
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("【" + bean.getClass().getSimpleName() + "】" + beanName + "开始实例化");

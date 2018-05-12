@@ -1,55 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--处理所有的bean-->
-    <bean id="beanPostProcessor" class="com.hly.spring.pojo.springIOC.BeanPostProcessorImpl"/>
+    <!--<context:component-scan base-package="com.hly.spring.pojo.springBean"/>
+   <context:property-placeholder ignore-resource-not-found="true" location="classpath:jdbc.properties"/>
+<bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+    <property name="locations">
+        <array>
+            <value>classpath:jdbc.properties</value>
+            <value>classpath:log4j.properties</value>
+        </array>
+    </property>
+</bean>
+
+    &lt;!&ndash;处理所有的bean&ndash;&gt;
+    &lt;!&ndash;<bean id="beanPostProcessor" class="com.hly.spring.pojo.springIOC.BeanPostProcessorImpl"/>&ndash;&gt;
 
     <bean id="source" class="com.hly.spring.pojo.springIOC.Source">
-    <property name="fruit" value="橙汁"/><!--property:构造方法的参数-->
+    <property name="fruit" value="橙汁"/>&lt;!&ndash;property:构造方法的参数&ndash;&gt;
     <property name="sugar" value="无糖"/>
     <property name="size" value="3"/>
 </bean>
 
-    <!--自定义初始化和销毁方法-->
+    &lt;!&ndash;自定义初始化和销毁方法&ndash;&gt;
     <bean id="juiceMaker" class="com.hly.spring.pojo.springIOC.JuiceMaker" init-method="init" destroy-method="destroy">
         <property name="beverageShop" value="避风塘"/>
-        <property name="source" ref="source"/><!--ref:引用之前定义的bean-->
+        <property name="source" ref="source"/>&lt;!&ndash;ref:引用之前定义的bean&ndash;&gt;
     </bean>
 
-    <!--构造器注入-->
-    <!--constructor-arg index="0" value="1":构造方法，第一个参数(参数位置)，值为1-->
+    &lt;!&ndash;构造器注入&ndash;&gt;
+    &lt;!&ndash;constructor-arg index="0" value="1":构造方法，第一个参数(参数位置)，值为1&ndash;&gt;
     <bean id="user1" class="com.hly.spring.pojo.springBean.User">
         <constructor-arg index="0" value="1"/>
         <constructor-arg index="1" value="hly"/>
         <constructor-arg index="2" value="123"/>
     </bean>
 
-    <!--setter注入-->
-    <!--property:参数名字-->
+    &lt;!&ndash;setter注入&ndash;&gt;
+    &lt;!&ndash;property:参数名字&ndash;&gt;
     <bean id="user2" class="com.hly.spring.pojo.springBean.User" scope="prototype">
     <property name="userId" value="1"/>
     <property name="userName" value="hly"/>
     <property name="userPassword" value="123"/>
 </bean>
 
-    <!--装配集合-->
+    &lt;!&ndash;装配集合&ndash;&gt;
     <bean id="complexAssemble" class="com.hly.spring.pojo.springBean.ComplexAssemble">
         <property name="id" value="1"/>
         <property name="list">
             <list>
-                <!--多个value元素设置值-->
+                &lt;!&ndash;多个value元素设置值&ndash;&gt;
                 <value>value-1ist-1</value>
                 <value>value-1ist-2</value>
             </list>
         </property>
         <property name="map">
             <map>
-                <!--entry元素设置值，包含一个键和一个值得设置-->
+                &lt;!&ndash;entry元素设置值，包含一个键和一个值得设置&ndash;&gt;
                 <entry key="key1" value="value-key-1"/>
                 <entry key="key2" value="value-key-2"/>
-                <!--应用bean用的是key-ref,value-ref-->
+                &lt;!&ndash;应用bean用的是key-ref,value-ref&ndash;&gt;
             </map>
         </property>
         <property name="props">
@@ -72,11 +84,13 @@
         </property>
         <property name="listUser">
             <list>
-                <!--引用之前定义的bean-->
+                &lt;!&ndash;引用之前定义的bean&ndash;&gt;
                 <ref bean="user2"/>
             </list>
         </property>
-    </bean>
+    </bean>-->
+
+
 
 
 </beans>

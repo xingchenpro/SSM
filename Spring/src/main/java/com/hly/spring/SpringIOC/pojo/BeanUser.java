@@ -1,21 +1,21 @@
-package com.hly.spring.pojo.springBean;
+package com.hly.spring.SpringIOC.pojo;
 
 /**
  * @author :hly
- * @date :2018/5/9
+ * @date :2018/5/12
  */
-public class User {
+public class BeanUser {
     private String userId;
     private String userName;
     private String userPassword;
 
-    public User(String userId, String userName, String userPassword) {
+    public BeanUser(String userId, String userName, String userPassword) {
         this.userId = userId;
         this.userName = userName;
         this.userPassword = userPassword;
     }
 
-    public User() {
+    public BeanUser() {
     }
 
     public String getUserId() {

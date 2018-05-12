@@ -27,10 +27,10 @@ public interface UserDao {
 
     public int userCount();//用户数量
     //map传递多个参数，根据Id和昵称查用户
-    public List<User> findUserIdAndNick(Map<String ,Object> IdAndNickMap);
+    public List<User> findUserByMap(Map<String ,Object> MapSelect);
 
     //@Param多参数查询,@Param给参数命名，代替pojo名字，根据名字得到参数值，传到Sql中
-    public List<User> findUserBaseIdAndNick(@Param("userRegisterId") String userRegisterId,@Param("userNick") String userNickNam);
+    public List<User> findUserBaseByParam(@Param("userRegisterId") String userRegisterId,@Param("userNick") String userNickNam);
 
     //JavaBean传递多个参数,可以另外定义一个参数的pojo
     public List<User> findUserByBean(User user);
@@ -38,6 +38,7 @@ public interface UserDao {
     //混合查询
     public List<User> findByMix(@Param("params") User user, @Param("page") PageParam pageParam);
 
+    //ResultMap
     public List<User> getUserResultMap(String userRegisterId);
 
     //分页参数RowBounds

@@ -1,5 +1,5 @@
-package com.hly.spring.pojo.springIOC;
 
+package com.hly.spring.SpringIOC.pojo;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
@@ -9,10 +9,10 @@ import org.springframework.context.ApplicationContextAware;
  * @author :hly
  * @date :2018/5/9
  */
-public class JuiceMaker implements BeanNameAware ,BeanFactoryAware,ApplicationContextAware,InitializingBean,DisposableBean{
+public class IOCJuiceMaker implements BeanNameAware ,BeanFactoryAware,ApplicationContextAware,InitializingBean,DisposableBean{
 
     private  String beverageShop = null;
-    private Source source;
+    private IOCSource source;
     public void init(){
         System.out.println("【"+this.getClass().getSimpleName()+"】"+"执行自定义初始化方法");
     }
@@ -31,10 +31,10 @@ public class JuiceMaker implements BeanNameAware ,BeanFactoryAware,ApplicationCo
     public void setBeverageShop(String beverageShop) {
         this.beverageShop = beverageShop;
     }
-    public Source getSource() {
+    public IOCSource getIOCSource() {
         return source;
     }
-    public void setSource(Source source) {
+    public void setIOCSource(IOCSource source) {
         this.source = source;
     }
     //以下为生命周期方法，按顺序

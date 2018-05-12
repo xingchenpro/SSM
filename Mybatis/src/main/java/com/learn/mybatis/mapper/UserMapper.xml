@@ -11,12 +11,12 @@
     </resultMap>
     <!--Sql语句段-->
     <sql id="selectUser">
-        user_register_id as userRegisterId ,user_nickname as userNickName
+        user_register_id ,user_nickname  ,user_password
     </sql>
-
     <!--resultMap制定采用哪个resultMap-->
     <select id="getUserResultMap" parameterType="string" resultMap="userMap" >
-        SELECT user_register_id,user_password,user_nickname FROM [user] WHERE user_register_id = #{userRegisterId}
+        <!--Select后面直接是数据库列名就行了-->
+        SELECT <include refid="selectUser"/> FROM [user] WHERE user_register_id = #{userRegisterId}
     </select>
     <!--parameterType:标出是什么类型的参数，SQL接受的参数类型-->
     <!--id要和接口定义的方法名称相同-->
@@ -44,12 +44,12 @@
     </select>
 
     <!--map接口多参数查询-->
-    <select id="findUserIdAndNick" parameterType="map" resultType="user">
+    <select id="findUserByMap" parameterType="map" resultType="user">
         SELECT user_register_id as userRegisterId ,user_password as userPassword FROM [user] WHERE user_register_id = #{userRegisterId} AND user_nickname like CONCAT('%', #{userNickName},'%')
     </select>
 
     <!--@Param多参数查询,不需要parameterType，@Param参数名字代替Pojo名字-->
-    <select id="findUserBaseIdANDNick"  resultType="user">
+    <select id="findUserBaseByParam"  resultType="user">
         SELECT user_register_id as userRegisterId ,user_password as userPassword FROM [user] WHERE user_register_id = #{userRegisterId} AND user_nickname like CONCAT('%', #{userNick},'%')
     </select>
 

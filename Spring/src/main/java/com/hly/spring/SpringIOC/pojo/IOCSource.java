@@ -1,10 +1,10 @@
-package com.hly.spring.pojo.springIOC;
+package com.hly.spring.SpringIOC.pojo;
 
 /**
  * @author :hly
  * @date :2018/5/9
  */
-public class Source {
+public class IOCSource {
     private String fruit;
     private String sugar;
     private Integer size;

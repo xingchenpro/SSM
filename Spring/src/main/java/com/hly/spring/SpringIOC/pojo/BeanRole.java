@@ -1,14 +1,14 @@
-package com.hly.spring.pojo.springBean;
+package com.hly.spring.SpringIOC.pojo;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
  * @author :hly
- * @date :2018/5/10
+ * @date :2018/5/12
  */
-@Component(value = "role")
-public class Role {
+@Component("role")
+public class BeanRole {
     @Value("1")
     private int rolerId;
     @Value("hly")

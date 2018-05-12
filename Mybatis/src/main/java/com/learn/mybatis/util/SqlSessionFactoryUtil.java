@@ -43,8 +43,10 @@ public class SqlSessionFactoryUtil {
     //创建SQLSession对象
     public static SqlSession openSqlSession(){
         if(sqlSessionFactory==null){
+            //空的话就先执行这个方法
             getSqlSessionFactory();
         }
+        //openSession()系统自带
         return sqlSessionFactory.openSession();
     }
 }

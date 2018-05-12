@@ -16,7 +16,6 @@ import java.util.Map;
 public class UserCRUD {
     public static void main(String[] args) {
         SqlSession sqlSession = null;
-        //Logger logger = Logger.getLogger(UserCRUD.class);
         try {
 
             sqlSession = SqlSessionFactoryUtil.openSqlSession();
@@ -60,8 +59,8 @@ public class UserCRUD {
             System.out.println("userByMix:" + userByMix);*/
 
             //resultMap
-            /*List<User> resultMao = userDao.getUserResultMap("4");
-            System.out.println("resultMap:"+resultMao);*/
+            List<User> resultMao = userDao.getUserResultMap("4");
+            System.out.println("resultMap:"+resultMao);
 
             /*List<User> userNick = userDao.findUser("nb");
             for(User usernick:userNick)
