@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <context:component-scan base-package="com.hly.spring.SpringIOC.*"/>
+    <!--解析占位符${}-->
+    <context:property-placeholder ignore-resource-not-found="false" location="classpath:jdbc.properties"/>
+    <!--下面的为何用不了-->
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+        <property name="locations">
+            <array>
+                <value>classpath:jdbc.properties</value>
+            </array>
+        </property>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>-->
 
-    <bean id="IOCBeanPostProcessorImpl" class="com.hly.spring.SpringIOC.pojo.IOCBeanPostProcessorImpl"/>
+    <!--Bean生命周期-->
+    <!--<bean id="IOCBeanPostProcessorImpl" class="com.hly.spring.SpringIOC.pojo.IOCBeanPostProcessorImpl"/>-->
 
     <bean id="IOCSource" class="com.hly.spring.SpringIOC.pojo.IOCSource">
         <!--property:构造方法的参数-->

@@ -1,20 +1,19 @@
-package com.hly.spring.pojo.springBean;
+package com.hly.spring.SpringIOC.Util;
 
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
  * @author :hly
- * @date :2018/5/11
+ * @date :2018/5/12
  */
-@ComponentScan
-public class DataSourceBean {
-
+@Component
+public class PropertyBeanDataSource {
     @Value("${driver}")
     private String driver = null;
     @Value("${url}")

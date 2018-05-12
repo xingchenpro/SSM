@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContextAware;
  * @author :hly
  * @date :2018/5/9
  */
+//实现了这些接口，初始化bean就会实现以下方法
 public class IOCJuiceMaker implements BeanNameAware ,BeanFactoryAware,ApplicationContextAware,InitializingBean,DisposableBean{
 
     private  String beverageShop = null;
