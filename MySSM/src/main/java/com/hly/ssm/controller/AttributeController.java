@@ -35,7 +35,7 @@ public class AttributeController {
        mv.addObject("user",user);
        return mv;
    }
-
+    //无法实现
    @RequestMapping("/RequestAttribute")
     public ModelAndView requestAttribute(@RequestHeader ("id")String userId){
        ModelAndView mv = new ModelAndView();
