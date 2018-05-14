@@ -12,9 +12,10 @@
 
 
 <!--使用注解驱动,没有就不能扫描@Controller,就会出现404-->
-    <mvc:annotation-driven/>
+    <!-- 一个配置节解决映射器和适配器的配置注解配置 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
     <!--https://www.cnblogs.com/dflmg/p/6393416.html-->
-    <mvc:default-servlet-handler/>
+    <!--<mvc:default-servlet-handler/>-->
     <!--定义扫描装载的包-->
     <context:component-scan base-package="com.*">
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
@@ -29,10 +30,25 @@
     <mvc:resources mapping="/static/**" location="/static/"/>
     <!--location元素表示webapp目录下的static包下的所有文件；
     mapping元素表示以/static开头的所有请求路径，如/static/a 或者/static/a/b；-->
-    <mvc:resources location="/" mapping="/**/*.html"/>
-    <mvc:resources location="/" mapping="/**/*.js"/>
-    <mvc:resources location="/" mapping="/**/*.css"/>
-    <mvc:resources location="/" mapping="/**/*.jpg"/>
+
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.hly.ssm.interceptor.UserInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.hly.ssm.interceptor.UserInterceptor2"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="com.hly.ssm.interceptor.UserInterceptor3"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
 
 
 </beans>

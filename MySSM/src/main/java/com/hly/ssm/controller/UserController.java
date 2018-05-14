@@ -11,11 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
  * @date :2018/5/13
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     UserService userService = null;
-    @RequestMapping("/")
+    @RequestMapping("/login")
     public ModelAndView index(){
         //User user = userService.selectUserById("1");
         ModelAndView mvUser = new ModelAndView();
