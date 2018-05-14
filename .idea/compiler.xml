@@ -13,12 +13,13 @@
         <module name="SpringMVC" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="1.7">
       <module name="devMode" target="1.7" />
       <module name="Mybatis" target="1.7" />
       <module name="MySSM" target="1.7" />
       <module name="Spring" target="1.7" />
       <module name="SpringMVC" target="1.7" />
+      <module name="SSM" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

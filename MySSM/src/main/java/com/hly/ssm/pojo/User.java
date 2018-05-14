@@ -12,6 +12,26 @@ public class User {
     private String userNickName;
     private String userPassword;
 
+    public User() {
+
+    }
+
+    public User(String userId, String userNickName, String userPassword) {
+        this.userId = userId;
+        this.userNickName = userNickName;
+        this.userPassword = userPassword;
+    }
+
+    /*private PageParams pageParams;
+
+        public PageParams getPageParams() {
+            return pageParams;
+        }
+
+        public void setPageParams(PageParams pageParams) {
+            this.pageParams = pageParams;
+        }
+    */
     public String getUserId() {
         return userId;
     }

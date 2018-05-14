@@ -7,4 +7,8 @@
     <select id="selectUserById" parameterType="string" resultType="user">
         SELECT <include refid="selectUser"/> FROM [user] WHERE user_register_id = #{userId}
     </select>
+
+    <insert id="insertUser" parameterType="user">
+        INSERT INTO [user](user_register_id,user_password,user_nickname) VALUES(#{userId},#{userNickName},#{userPassword})
+    </insert>
 </mapper>

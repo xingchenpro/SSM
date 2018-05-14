@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="<%=path%>/static/source/css/test.css" rel="stylesheet">
 </head>
 <body>
 <table border="1" align="center" style="text-align: center">

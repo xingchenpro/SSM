@@ -1,6 +1,5 @@
 package com.hly.ssm.controller;
 
-import com.hly.ssm.pojo.User;
 import com.hly.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +17,11 @@ public class UserController {
     UserService userService = null;
     @RequestMapping("/")
     public ModelAndView index(){
-        User user = userService.selectUserById("1");
+        //User user = userService.selectUserById("1");
         ModelAndView mvUser = new ModelAndView();
         //jsp文件名字
-        mvUser.setViewName("index");
-        mvUser.addObject("user",user);
+        mvUser.setViewName("login");
+        //mvUser.addObject("user",user);
         return mvUser;
     }
 }

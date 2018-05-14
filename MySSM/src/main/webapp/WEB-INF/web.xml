@@ -16,6 +16,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 
+
   <!--配置DispatcherServlet-->
   <!--spring会根据servlet-name的配置，找到Springmvc.xml配置，加载到web工程中的配置-->
   <servlet>
@@ -37,6 +38,8 @@
     <!-- 此处可以可以配置成*.do，对应struts的后缀习惯.所有后缀.do结尾的都会被他拦截 -->
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+
 
 
 </web-app>
