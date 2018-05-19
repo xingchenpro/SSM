@@ -45,7 +45,7 @@
         <property name="dataSource" ref="dataSource"/>
         <!-- 自动扫描mapping.xml文件 -->
         <!--mapperLocations：它表示我们的Mapper文件存放的位置，当我们的Mapper文件跟对应的Mapper接口处于同一位置的时候可以不用指定该属性的值。-->
-        <property name="mapperLocations" value="classpath:com/hly/websocket/mapping/*.xml"/>
+        <!--<property name="mapperLocations" value="classpath:com/hly/websocket/mapping/*.xml"/>-->
         <!--别名-->
         <property name="typeAliasesPackage" value="com.hly.ssm.pojo"/>
     </bean>
