@@ -74,6 +74,7 @@ public class WebSocketLink {
     }
 
     //收到消息
+    //msg是收到的json对象，和下面要发过去的json对象相同
     @OnMessage
     public void onMessage(String msg, Session session) {
         System.out.println("客户端的消息" + msg);
@@ -84,7 +85,6 @@ public class WebSocketLink {
             broadcastMsg(msg);
         } else {
             String[] userList = message.get("to").toString().split(",");
-            singleMsg(msg, (Session) userSessions.get(message.get("from")));
             for (String user : userList) {
                 if (!user.equals(message.get("from"))) {
                     singleMsg(msg, (Session) userSessions.get(user));
