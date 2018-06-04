@@ -57,7 +57,6 @@
 
                                     <div class="name">天狼星</div>
                                     <div class="this_time">4-12-15:10</div>
-
                                 </div>
                             </div>
                         </li>

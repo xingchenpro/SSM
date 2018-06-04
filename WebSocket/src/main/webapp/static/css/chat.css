@@ -16,7 +16,7 @@
 .chat_index {
     width: 1000px;
     height: 600px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     position: relative;
     top: 100px;
     margin: 0 auto;
@@ -26,28 +26,28 @@
     background: linear-gradient(to right, #a41adc, #ee1351, #a41adc); /* 标准的语法 */
     width: 999px;
     height: 50px;
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
 }
 
 .chat_body {
     width: 999px;
     height: 546px;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 .chat_online {
     overflow: hidden;
     float: left;
-    height: 546px;
+    height: 550px;
     width: 200px;
-    border: 1px solid yellow;
-    background-color: white;
+    /*border: 1px solid yellow;*/
+    background: linear-gradient(to right, #bedccc, #5fb7bc); /* 标准的语法 */
 }
 
 .search_online {
     text-indent: 2em;
     height: 40px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .search_online input[type="text"] {
@@ -72,10 +72,10 @@
 }
 
 .a_friend {
-
+    width: 198px;
     /*border: 1px solid #2328ff;*/
     height: 55px;
-    background-color: #ffc70f;
+    background-color: #ff418d;
 
 }
 
@@ -86,7 +86,7 @@
     float: left;
     height: 40px;
     width: 40px;
-    border: 1px solid orangered;
+    /*border: 1px solid orangered;*/
     border-radius: 50%;
 }
 
@@ -121,15 +121,15 @@
     float: left;
     width: 548px;
     height: 546px;
-    border: 1px solid seagreen;
+    /*border: 1px solid seagreen;*/
     /*background-color: white;*/
-    background: url("../img/圣诞.jpg") no-repeat;
+    background: url("../img/sd.jpg") no-repeat;
     background-size: cover;
 }
 
 .send_message {
     width: 548px;
-    height: 65px;
+    height: 58px;
     position: absolute;
     bottom: 0px;
     background: linear-gradient(to top, rgba(9, 216, 237, 0.99), #72cad4);
@@ -170,15 +170,19 @@
 
 .chat_namecard {
     float: left;
-    width: 245px;
-    height: 546px;
-    border: 1px solid saddlebrown;
+    width: 250px;
+    height: 550px;
+    /*border: 1px solid saddlebrown;*/
     background-color: #f1fea9;
 }
 /*聊天界面*/
 
 .chat_content ul{
 list-style-type: none;
+}
+/*隐藏滚动条，只有Google浏览器有效*/
+.chat_content::-webkit-scrollbar{
+    display: none;
 }
 .chat_content{
     overflow: auto;
@@ -200,7 +204,7 @@ list-style-type: none;
     border-radius: 10px;
     /*最大宽度不能太长，不然布局会混乱*/
     max-width: 400px;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     box-shadow: 0 0 3px #879eee;
     overflow: hidden;
     float: right;
