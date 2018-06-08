@@ -1,3 +1,4 @@
+
 var websocket = null;
 //注意单词的拼写
 if ('WebSocket' in window) {

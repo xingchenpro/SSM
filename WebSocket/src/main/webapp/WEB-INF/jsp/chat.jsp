@@ -1,4 +1,5 @@
 <%--
+  作者博客：https://blog.csdn.net/Sirius_hly
   Created by IntelliJ IDEA.
   User: hly
   Date: 2018/5/17
@@ -29,6 +30,7 @@
 <table id="table"></table>--%>
 
 <div class="all">
+
     <div class="chat_index">
         <!--banner-->
         <div class="chat_banner">
@@ -64,12 +66,12 @@
                             <div class="a_friend">
                                 <div class="head_portrait">
                                     <div class="head_text">
-                                        黄
+                                        曹
                                     </div>
                                 </div>
                                 <div class="friend">
 
-                                    <div class="name">天狼星</div>
+                                    <div class="name">CWB</div>
                                     <div class="this_time">4-12-15:10</div>
 
                                 </div>
@@ -79,12 +81,12 @@
                             <div class="a_friend">
                                 <div class="head_portrait">
                                     <div class="head_text">
-                                        黄
+                                        李
                                     </div>
                                 </div>
                                 <div class="friend">
 
-                                    <div class="name">天狼星</div>
+                                    <div class="name">LXY</div>
                                     <div class="this_time">4-12-15:10</div>
 
                                 </div>
