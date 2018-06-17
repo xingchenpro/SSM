@@ -6,7 +6,9 @@ package OS;
  */
 public class test {
 
-
+public static void main(String[]arv){
+    System.out.println(Math.ceil(10/16.0));
+}
 
 
 }

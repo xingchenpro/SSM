@@ -22,7 +22,6 @@
       <module name="SpringMVC" target="1.7" />
       <module name="SSM" target="1.7" />
       <module name="WebSocket" target="1.7" />
-      <module name="WebStock" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
