@@ -77,7 +77,6 @@ public class GroupLinking {
             for (j = 0; j <= 3; j++)
                 freeGroup[j] = groups[i][j];
                 display1();
-
         }
     }
 
@@ -171,7 +170,6 @@ public class GroupLinking {
         display();
         System.out.println("请输入操作：1:分配，2:回收");
         menu();
-
     }
 
 }
