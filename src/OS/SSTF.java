@@ -7,6 +7,7 @@ import java.util.*;
  * @date :2018/6/24
  */
 public class SSTF {
+
     static Scanner scanner = new Scanner(System.in);
     //请求序列长度
     static int length;
@@ -19,7 +20,7 @@ public class SSTF {
     //开始位置
     static int start;
 
-    static int MIM_NUM = Integer.MAX_VALUE;
+    static int MIN_NUM = Integer.MAX_VALUE;
 
     //输入
     public static void input(){
@@ -43,17 +44,18 @@ public class SSTF {
 
         while (num > 0) {
             for (int j = 0; j < length; j++) {
-                if (Math.abs(thisMinPoint - arrays[j]) < MIM_NUM && arrays[j] != -1) {
-                    MIM_NUM = Math.abs(thisMinPoint - arrays[j]);
+                if (Math.abs(thisMinPoint - arrays[j]) < MIN_NUM && arrays[j] != -1) {
+                    MIN_NUM = Math.abs(thisMinPoint - arrays[j]);
                     thisIndex = j;
                 }
             }
             num--;
+            System.out.println("MIN_NUM:"+MIN_NUM);
             thisMinPoint = arrays[thisIndex];
             arraysAfter[after++] = arrays[thisIndex];
             arrays[thisIndex] = -1;
-            sumLength += MIM_NUM;
-            MIM_NUM = Integer.MAX_VALUE;
+            sumLength += MIN_NUM;
+            MIN_NUM = Integer.MAX_VALUE;
 
         }
     }
@@ -68,12 +70,11 @@ public class SSTF {
     }
 
     public static void main(String[] args) {
-        //98，183，37，122，14，124，65，67
+        //98 183 37 122 14 124 65 67
+        //90 58 55 39 38 18 150 160 184
         input();
         SSTF();
         output();
 
     }
-
-
 }

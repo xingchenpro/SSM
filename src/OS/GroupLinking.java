@@ -28,7 +28,7 @@ public class GroupLinking {
             System.out.print("group1:");
             for (j = 1; j <= i; j++) {
                 System.out.print(freeGroup[j] + " ");
-                allocations[++allocationNum] = freeGroup[j];
+                allocations[allocationNum] = freeGroup[j];
             }
             System.out.println();
             t = freeGroup[1];
@@ -73,6 +73,7 @@ public class GroupLinking {
         if (freeGroup[0] != 0) {
             display1();
         } else {
+            System.out.println("free0:");
             i = freeGroup[1];
             for (j = 0; j <= 3; j++)
                 freeGroup[j] = groups[i][j];

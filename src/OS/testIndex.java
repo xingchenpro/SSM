@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author :hly
  * @date :2018/6/3
  */
-public class MixIndex {
+public class testIndex {
     public static void main(String [] arv){
         Scanner scanner = new Scanner(System.in);
         int file,count,bsize,bnsize;
