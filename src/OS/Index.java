@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author :hly
- * @date :201(blockSize/blockNumSpaceSize/6/17
+ * @date :201(blockSize/blockNumSpaceSize/6/10
  */
 public class Index {
 
@@ -25,7 +25,7 @@ public class Index {
             if (i >= 0 && i < 10)
                 //存放直接地址
                 blocks[i] = blockSize;
-                //间接地址文件可达的大小
+                //间接地址，文件最大可分配大小
             else if (i == 10)
                 blocks[i] = (int) Math.pow((blockSize / blockNumSpaceSize), 1) * blockSize;
             else if (i == 11)

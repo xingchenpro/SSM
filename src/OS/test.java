@@ -7,7 +7,9 @@ package OS;
 public class test {
 
 public static void main(String[]arv){
-    System.out.println(Math.ceil(10/16.0));
+    //System.out.println(Math.ceil(10/16.0));
+    int [] a = {1,2,3};
+    int j = a[0];
 }
 
 
