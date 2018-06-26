@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author :hly
- * @date :201(blockSize/blockNumSpaceSize/6/10
+ * @date :2018/6/10
  */
 public class Index {
 

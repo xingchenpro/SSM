@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author :hly
  * @date :2018/6/15
  */
-public class GroupLinking {
+public class testGroupLinking {
     //每组3块
     static int[] freeGroup = new int[4];
     //可用磁盘快
