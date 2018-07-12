@@ -50,7 +50,7 @@ public class SSTF {
                 }
             }
             num--;
-            System.out.println("MIN_NUM:"+MIN_NUM);
+            //System.out.println("MIN_NUM:"+MIN_NUM);
             thisMinPoint = arrays[thisIndex];
             arraysAfter[after++] = arrays[thisIndex];
             arrays[thisIndex] = -1;

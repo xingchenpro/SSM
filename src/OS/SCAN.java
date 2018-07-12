@@ -69,7 +69,7 @@ public class SCAN {
 
             if(flag==true) {
                 num--;
-                System.out.println("MIN_NUM:"+MIN_NUM);
+                //System.out.println("MIN_NUM:"+MIN_NUM);
                 thisMinPoint = arrays[thisIndex];
                 sumLength += MIN_NUM;
                 MIN_NUM = Integer.MAX_VALUE;
