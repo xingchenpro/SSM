@@ -12,16 +12,15 @@ public class User {
     private String userNickName;
     private String userPassword;
 
-    public User() {
 
-    }
 
     public User(String userId, String userNickName, String userPassword) {
         this.userId = userId;
         this.userNickName = userNickName;
         this.userPassword = userPassword;
     }
-
+    public User() {
+    }
     public String getUserId() {
         return userId;
     }
@@ -46,12 +45,5 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId='" + userId + '\'' +
-                ", userNickName='" + userNickName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                '}';
-    }
+
 }

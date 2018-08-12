@@ -13,10 +13,19 @@
 
 <!--使用注解驱动,没有就不能扫描@Controller,就会出现404-->
     <!-- 一个配置节解决映射器和适配器的配置注解配置 -->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!--是用于激活那些已经在spring容器里注册过的bean-->
+    <context:annotation-config />
+
+
     <!--https://www.cnblogs.com/dflmg/p/6393416.html-->
     <!--<mvc:default-servlet-handler/>-->
     <!--定义扫描装载的包-->
+    <!--具有<context:annotation-config>的功能之外-->
     <context:component-scan base-package="com.*">
         <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
     </context:component-scan>
@@ -58,5 +67,9 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960"/>
     </bean>
+
+
+
+
 
 </beans>
