@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/MySSM" />
     <file type="web" url="file://$PROJECT_DIR$/Spring" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC" />
+    <file type="web" url="file://$PROJECT_DIR$/t" />
     <file type="web" url="file://$PROJECT_DIR$/WebSocket" />
   </component>
   <component name="MavenProjectsManager">

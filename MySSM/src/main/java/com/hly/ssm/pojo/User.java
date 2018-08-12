@@ -22,16 +22,6 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    /*private PageParams pageParams;
-
-        public PageParams getPageParams() {
-            return pageParams;
-        }
-
-        public void setPageParams(PageParams pageParams) {
-            this.pageParams = pageParams;
-        }
-    */
     public String getUserId() {
         return userId;
     }

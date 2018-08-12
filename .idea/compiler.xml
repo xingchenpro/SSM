@@ -21,6 +21,7 @@
       <module name="Spring" target="1.7" />
       <module name="SpringMVC" target="1.7" />
       <module name="SSM" target="1.8" />
+      <module name="t" target="1.7" />
       <module name="WebSocket" target="1.7" />
     </bytecodeTargetLevel>
   </component>
