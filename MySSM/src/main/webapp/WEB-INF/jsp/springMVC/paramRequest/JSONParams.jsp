@@ -16,7 +16,6 @@
     <script src="<%=path%>/static/source/js/jquery-2.1.4.min.js"></script>
     <script>
         $(document).ready(function () {
-
             $("#start").click(function () {
                 alert("点击了");
                 var user={
@@ -25,7 +24,6 @@
                         userPassword: "qq",
 
                     }
-
                 $.ajax({
                     url:"<%=path%>/jsonParam/jsonParam/",
                     type : "POST",

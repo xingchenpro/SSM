@@ -24,25 +24,17 @@ import com.alibaba.fastjson.JSONObject;
 public class JSONParamsController {
 
     @RequestMapping("jsonParam")
-    public ModelAndView jsonParam(@RequestBody User user){
-//String userId,@RequestBody String userNickName,@RequestBody String userPassword
+    public ModelAndView jsonParam(@RequestBody User user) {
 
-
-
-
-
-        System.out.println(user.getUserId());
-        //System.out.println(userId+userNickName+userPassword);
-
-
+        System.out.println(user.toString());
         ModelAndView mv = new ModelAndView();
         //mv.addObject(json);
-       mv.setView(new MappingJackson2JsonView());
+        mv.setView(new MappingJackson2JsonView());
         return mv;
     }
 
     @RequestMapping("jsonStart")
-    public ModelAndView jsonStart(){
+    public ModelAndView jsonStart() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("/springMVC/paramRequest/JSONParams");
         return mv;
