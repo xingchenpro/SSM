@@ -27,7 +27,8 @@
                 $.ajax({
                     url:"<%=path%>/jsonParam/jsonParam/",
                     type : "POST",
-                    data:JSON.stringify(user),
+                    //data:JSON.stringify(user),
+                    data:JSON.stringify({userId: "e",userNickName: "hly",userPassword: "qq",}),
                     contentType:'application/json',
                     dataType : 'json',
                     beforeSend : function () {
