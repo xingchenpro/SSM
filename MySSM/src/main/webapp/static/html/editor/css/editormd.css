@@ -3582,7 +3582,7 @@
     padding: 20px;
     overflow: auto;
     width: 100%;
-    background-color: #fff
+    background-color: #fff/*整个界面背景*/
 }
 
 .editormd-html-preview blockquote, .editormd-preview-container blockquote {
@@ -3600,7 +3600,7 @@
 }
 
 .editormd-html-preview abbr, .editormd-preview-container abbr {
-    background: #ffd
+    background: #161411
 }
 
 .editormd-html-preview hr, .editormd-preview-container hr {
@@ -3612,7 +3612,7 @@
 
 .editormd-html-preview code, .editormd-preview-container code {
     border: 1px solid #ddd;
-    background: #f6f6f6;
+    background: #161411;/*代码背景,原来是白*/
     padding: 3px;
     border-radius: 3px;
     font-size: 14px
@@ -3620,7 +3620,7 @@
 
 .editormd-html-preview pre, .editormd-preview-container pre {
     border: 1px solid #ddd;
-    background: #f6f6f6;
+    background: #161411;
     padding: 10px;
     border-radius: 3px
 }
@@ -3669,8 +3669,9 @@
 }
 
 /*! Pretty printing styles. Used with prettify.js. */
+/*这里貌似是代码里面字体颜色*/
 .pln {
-    color: #000
+    color: white/*代码字母颜色。原来是黑*/
 }
 
 @media screen {
@@ -3776,7 +3777,7 @@ li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
 }
 
 li.L1, li.L3, li.L5, li.L7, li.L9 {
-    background: #eee
+    background: #161411/*每一行代码背景*/
 }
 
 .editormd-html-preview pre.prettyprint, .editormd-preview-container pre.prettyprint {

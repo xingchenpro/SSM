@@ -9,13 +9,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../../static/html/editor/editor.md-master/examples/css/style.css"/>
-    <link rel="stylesheet" href="../../../static/html/editor/editor.md-master/css/editormd.min.css"/>
-    <link rel="stylesheet" href="../../../static/html/editor/css/editormd.min.editormd.css"/>
+
+    <link rel="stylesheet" href="../../../static/html/editor/css/editormd.css"/>
 
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-<div id="doc-content">
+<div id="content">
     <textarea style="display:none;">```html
  $("#my_submit").click(function () {
         alert("正在提交");
@@ -23,12 +23,9 @@
     })
 
 ```
-## 阿萨德
-2018-08-15 21:55:06 星期三
-:tw-1f1fb: :tw-1f1fe: :tw-1f202:
-:tw-1f1ef:</textarea>
+#### 提交
+:tw-1f170:</textarea>
 </div>
-
 
 <script src="../../../static/html/editor/editor.md-master/examples/js/jquery.min.js"></script>
 <script src="../../../static/html/editor/editor.md-master/editormd.min.js"></script>
@@ -42,7 +39,7 @@
 <script type="text/javascript">
     var testEditor;
     $(function () {
-        testEditor = editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id
+        testEditor = editormd.markdownToHTML("content", {//注意：这里是上面DIV的id
             htmlDecode: "style,script,iframe",
             emoji: true,
             taskList: true,

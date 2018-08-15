@@ -21,22 +21,19 @@
 <body>
 <div id="layout">
     <header></header>
-
     <%--页面提交表单内容--%>
-    <form id="my-editor-form">
 
-        <input type="text" placeholder="请输入标题" id="title" name="title" autocomplete="off" >
-        <input name="my_submit" id="my_submit" value="提交" type="button">
+    <input type="text" placeholder="请输入标题" id="title" name="title" autocomplete="off">
+    <input name="my_submit" id="my_submit" value="提交" type="button">
     <div id="test-editormd">
-        <textarea class="editormd-markdown-textarea" id="editor-md-doc" name="editor-md-doc" style="display:none;"></textarea>
-        <textarea class="editormd-html-textarea" id="editor-md-html" name="editor-md-html"></textarea>
+        <textarea id="editor-md-doc" name="editor-md-doc" style="display:none;"></textarea>
+        <textarea id="editor-md-html" name="editor-md-html"></textarea>
     </div>
-    </form>
+
 </div>
 <script src="<%=path%>/static/html/editor/editor.md-master/examples/js/jquery.min.js"></script>
 <script src="<%=path%>/static/html/editor/editor.md-master/editormd.min.js"></script>
 <script>
-
     $("#my_submit").click(function () {
         alert("正在提交");
         submit_atricle();
@@ -47,14 +44,14 @@
         var htmlContent = $("#editor-md-html").val();
         var markdownContent = $("#editor-md-doc").val();
         $.ajax({
-            url:"<%=path%>/fileUpload/editorContent",
-            data:JSON.stringify({title:title,htmlContent:htmlContent,markdownContent:markdownContent}),
-            type:"POST",
-            contentType:'application/json',
-            success:function () {
+            url: "<%=path%>/fileUpload/editorContent",
+            data: JSON.stringify({title: title, htmlContent: htmlContent, markdownContent: markdownContent}),
+            type: "POST",
+            contentType: 'application/json',
+            success: function () {
                 alert("发布成功");
             },
-            error:function () {
+            error: function () {
                 alert("发布失败");
             }
         })
@@ -64,21 +61,22 @@
     var testEditor;
 
     $(function () {
-        testEditor = editormd("test-editormd", {/*上面div的值*/
+        testEditor = editormd("test-editormd", {
+            /*上面div的值*/
             width: "70%",//编辑器大小官方默认90%
             height: 640,
             syncScrolling: "single",
             path: "<%=path%>/static/html/editor/editor.md-master/lib/",
-            saveHTMLToTextarea : true,//注意3：这个配置，textarea可以提交
+            saveHTMLToTextarea: true,//注意3：这个配置，textarea可以提交
 
             emoji: true,//emoji表情，默认关闭
-            tocm : true, // Using [TOCM]
-            tex : true, // 开启科学公式TeX语言支持，默认关闭
-            flowChart : true, // 开启流程图支持，默认关闭
+            tocm: true, // Using [TOCM]
+            tex: true, // 开启科学公式TeX语言支持，默认关闭
+            flowChart: true, // 开启流程图支持，默认关闭
             /**上传图片相关配置如下*/
-            imageUpload : true,
-            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            imageUploadURL : "<%=path%>/fileUpload/editorMDUpload",//注意你后端的上传图片服务地址
+            imageUpload: true,
+            imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL: "<%=path%>/fileUpload/editorMDUpload",//注意你后端的上传图片服务地址
             onload: function () { //上传成功之后的回调
 
             },
