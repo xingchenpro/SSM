@@ -1,6 +1,8 @@
 package com.hly.ssm.controller.fileUploadController;
 
+import com.hly.ssm.pojo.Article;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +26,24 @@ import java.util.Calendar;
 @RequestMapping(value = "/fileUpload" )
 public class EditormdFileUploadController {
 
+    /**
+     * 边界页面
+     * @return
+     */
+    @RequestMapping("editorMD")
+    public ModelAndView editormd(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("/editor/simple");
+        return mv;
+    }
 
+    /**
+     * 图片上传
+     * @param request
+     * @param response
+     * @param file
+     * @throws IOException
+     */
     @RequestMapping(value = "/editorMDUpload" ,method = RequestMethod.POST)
     public void editorMD(HttpServletRequest request, HttpServletResponse response,@RequestParam(value = "editormd-image-file", required = false) MultipartFile file) throws IOException {
         try {
@@ -46,28 +65,37 @@ public class EditormdFileUploadController {
             if(!newFile.getParentFile().exists()){
                 newFile.getParentFile().mkdirs();
             }
-            //String url = rootPath+"/"+dateFile+"/"+newFile;
-            //System.out.println("url:"+url);
-            //file.getOriginalFilename()得到最初的文件名
             file.transferTo(newFile);
             //System.out.println("/resources/upload/"+dateFile+File.separator+originalFile);
             System.out.println(dateFile+"/"+file.getOriginalFilename());
             /*JSON格式*/
             response.getWriter().write("{\"success\":1,\"message\":\"上传成功\",\"url\":\"/resource/upload/"+date.get(Calendar.YEAR)+"/"+(date.get(Calendar.MONTH)+1)+"/"+date.get(Calendar.DATE)+"/"+file.getOriginalFilename()+"\"}");
 
-
         } catch (Exception e) {
             response.getWriter().write("{\"success\":0}");
 
         }
+    }
 
-    }
-    @RequestMapping("editorMD")
-    public ModelAndView editormd(){
+    /**
+     * 获取文章内容
+     */
+
+    @RequestMapping(value = "editorContent",method = RequestMethod.POST)
+    public ModelAndView articleContent(@RequestBody Article article){
+        System.out.println("MD文本");
+        System.out.println(article.getMarkdownContent());
+        System.out.println("HTML文本");
+        System.out.println(article.getHtmlContent());
+
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("/editor/simple");
-        return mv;
+        mv.addObject("html",article.getHtmlContent());
+        mv.addObject("md",article.getMarkdownContent());
+        mv.setViewName("editor/article");
+        return  mv;
     }
+
+
 
 
 

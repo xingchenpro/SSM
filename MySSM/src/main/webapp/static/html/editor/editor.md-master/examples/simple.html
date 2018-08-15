@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="../css/editormd.css"/>
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
+
 </head>
 <body>
 <div id="layout">
@@ -27,15 +28,20 @@
             width: "70%",//编辑器大小官方默认90%
             height: 640,
             syncScrolling: "single",
-            path: "../lib/",
+            path: "../lib/",//这个编辑器文件的lib路径
             saveHTMLToTextarea : true,//注意3：这个配置，textarea可以提交
 
             emoji: true,//emoji表情，默认关闭
+            tocm : true, // Using [TOCM]
+            tex : true, // 开启科学公式TeX语言支持，默认关闭
+            flowChart : true, // 开启流程图支持，默认关闭
             /**上传图片相关配置如下*/
             imageUpload : true,
             imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            imageUploadURL : "/editorMDUpload",//注意你后端的上传图片服务地址
+            imageUploadURL : "<%=path%>/fileUpload/editorMDUpload",//注意你后端的上传图片服务地址
+            onload: function () { //上传成功之后的回调
 
+            },
 
             //editorTheme: "pastel-on-dark",//编辑器的主题颜色
             theme: "gray",//顶部的主题
