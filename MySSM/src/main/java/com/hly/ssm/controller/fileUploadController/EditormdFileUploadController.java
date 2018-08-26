@@ -25,7 +25,6 @@ import java.util.Calendar;
 @Controller
 @RequestMapping(value = "/fileUpload" )
 public class EditormdFileUploadController {
-
     /**
      * 边界页面
      * @return
@@ -36,7 +35,6 @@ public class EditormdFileUploadController {
         mv.setViewName("/editor/simple");
         return mv;
     }
-
     /**
      * 图片上传
      * @param request
@@ -73,14 +71,11 @@ public class EditormdFileUploadController {
 
         } catch (Exception e) {
             response.getWriter().write("{\"success\":0}");
-
         }
     }
-
     /**
      * 获取文章内容
      */
-
     @RequestMapping(value = "editorContent",method = RequestMethod.POST)
     public ModelAndView articleContent(@RequestBody Article article){
         System.out.println("MD文本");
@@ -94,5 +89,4 @@ public class EditormdFileUploadController {
         mv.setViewName("editor/article");
         return  mv;
     }
-
 }
