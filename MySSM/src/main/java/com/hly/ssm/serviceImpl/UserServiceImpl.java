@@ -10,10 +10,11 @@ import org.springframework.stereotype.Service;
  * @author :hly
  * @date :2018/5/13
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserDao userDao;
+
     @Override
     public User selectUserById(String userId) {
         return userDao.selectUserById(userId);
