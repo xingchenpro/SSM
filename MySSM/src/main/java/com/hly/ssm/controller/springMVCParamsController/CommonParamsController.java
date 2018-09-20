@@ -1,7 +1,6 @@
-package com.hly.ssm.controller.paramsController;
+package com.hly.ssm.controller.springMVCParamsController;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 

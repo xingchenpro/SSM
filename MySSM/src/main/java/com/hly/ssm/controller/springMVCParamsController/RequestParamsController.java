@@ -1,4 +1,4 @@
-package com.hly.ssm.controller.paramsController;
+package com.hly.ssm.controller.springMVCParamsController;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

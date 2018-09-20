@@ -1,4 +1,4 @@
-package com.hly.ssm.controller.paramsController;
+package com.hly.ssm.controller.springMVCParamsController;
 
 import com.hly.ssm.pojo.User;
 import org.springframework.stereotype.Controller;
