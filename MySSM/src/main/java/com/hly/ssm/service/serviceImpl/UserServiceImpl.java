@@ -5,9 +5,7 @@ import com.hly.ssm.pojo.User;
 import com.hly.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
+
 
 /**
  * @author :hly
@@ -20,7 +18,7 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED)
+    //@Transactional(propagation = Propagation.REQUIRED,isolation = Isolation.READ_COMMITTED)
     public User selectUserById(String userId) {
         return userDao.selectUserById(userId);
     }

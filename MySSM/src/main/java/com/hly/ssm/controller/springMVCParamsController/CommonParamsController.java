@@ -11,10 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
  * @date :2018/8/12
  */
 @Controller
-@RequestMapping("commonParam")
+@RequestMapping("/commonParam")
 public class CommonParamsController {
 
-    @RequestMapping("commonParam")
+    @RequestMapping("/commonParam")
     public ModelAndView commonParam(String user_id,String user_password){
         System.out.println("user_id:"+user_id);
         System.out.println("user_password:"+user_password);

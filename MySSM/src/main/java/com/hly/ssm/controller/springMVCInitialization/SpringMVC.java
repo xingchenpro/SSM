@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletRequest;
  * @date :2018/9/4
  */
 @Controller
-@RequestMapping("SpringMVC")
+@RequestMapping("/SpringMVC")
 public class SpringMVC {
 
-    @RequestMapping("SpringMVC")
+    @RequestMapping("/SpringMVC")
     //public ModelAndView springMVC(HttpServletRequest request){
     public ModelAndView springMVC(@RequestParam("id") String id){
         //System.err.println(request.getParameter("id"));
