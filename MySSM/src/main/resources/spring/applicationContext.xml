@@ -63,6 +63,7 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
+
     <!--使用注解定义事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
