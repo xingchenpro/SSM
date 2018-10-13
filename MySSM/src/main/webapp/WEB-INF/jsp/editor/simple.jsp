@@ -15,14 +15,12 @@
     <title>Simple example - Editor.md examples</title>
     <link rel="stylesheet" href="<%=path%>/static/html/editor/editor.md-master/examples/css/style.css"/>
     <link rel="stylesheet" href="<%=path%>/static/html/editor/editor.md-master/css/editormd.css"/>
-    <link rel="stylesheet" href="<%=path%>/static/assets/js/jquery-3.1.1.js"/>
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
 <div id="layout">
-    <header></header>
-    <%--页面提交表单内容--%>
 
+    <%--页面提交表单内容--%>
     <input type="text" placeholder="请输入标题" id="title" name="title" autocomplete="off">
     <input name="my_submit" id="my_submit" value="提交" type="button">
     <div id="test-editormd">
@@ -80,7 +78,6 @@
             onload: function () { //上传成功之后的回调
 
             },
-
             //editorTheme: "pastel-on-dark",//编辑器的主题颜色
             theme: "gray",//顶部的主题
             previewTheme: "dark"//显示的主题
