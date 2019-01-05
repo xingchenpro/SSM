@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="devMode:war">
-    <output-path>$PROJECT_DIR$/devMode/target</output-path>
-    <root id="archive" name="devMode.war">
-      <element id="artifact" artifact-name="devMode:war exploded" />
-    </root>
-  </artifact>
-</component>

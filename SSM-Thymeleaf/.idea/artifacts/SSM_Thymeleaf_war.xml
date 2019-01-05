@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSM-Thymeleaf:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Sirius.war">
+      <element id="artifact" artifact-name="SSM-Thymeleaf:war exploded" />
+    </root>
+  </artifact>
+</component>
