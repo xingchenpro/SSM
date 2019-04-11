@@ -17,8 +17,4 @@ public class IndexDaoImpl implements IndexDao {
     public void index(String str) {
         System.out.println(str);
     }
-
-
-
-
 }

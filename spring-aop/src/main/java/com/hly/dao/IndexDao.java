@@ -8,6 +8,5 @@ package com.hly.dao;
  * @date :2019/4/10
  */
 public interface IndexDao {
-
     public void index(String str);
 }

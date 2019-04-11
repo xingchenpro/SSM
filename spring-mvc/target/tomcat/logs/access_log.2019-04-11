@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:14:53:25 +0800] "GET / HTTP/1.1" 200 52 http-bio-8080-exec-1 722
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:14:53:25 +0800] "GET /favicon.ico HTTP/1.1" 404 949 http-bio-8080-exec-3 25
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:14:54:12 +0800] "GET /beanController HTTP/1.1" 404 949 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [11/Apr/2019:14:59:50 +0800] "GET /beanController HTTP/1.1" 200 - http-bio-8080-exec-1 52

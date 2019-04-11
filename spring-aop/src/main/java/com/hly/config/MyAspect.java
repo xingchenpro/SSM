@@ -23,7 +23,6 @@ public class MyAspect {
 
     }
 
-
     //找到pointCut()
     //前置通知
     //给通知传递参数
@@ -50,8 +49,8 @@ public class MyAspect {
         System.out.println("advice-afterThrowing...");
     }
 
-
     @Around("pointCut()")
+    //ProceedingJoinPoint：Spring提供的参数
     public void around(ProceedingJoinPoint joinPoint) {
         try {
             //反射切点的方法
@@ -61,7 +60,4 @@ public class MyAspect {
         }
         System.out.println("advice-around...");
     }
-
-
-
 }
