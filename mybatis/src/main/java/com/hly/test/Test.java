@@ -1,10 +1,12 @@
 package com.hly.test;
 
+import com.hly.dao.UserDao;
 import com.hly.entity.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.omg.PortableInterceptor.USER_EXCEPTION;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +26,11 @@ public class Test {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        User user = sqlSession.selectOne("selectUser",1);
+        //1.
+        //User user = sqlSession.selectOne("selectUser",1);
+        //2.
+        UserDao userDao =sqlSession.getMapper(UserDao.class);
+        User user = userDao.selectUser(1);
         System.err.println(user);
 
 

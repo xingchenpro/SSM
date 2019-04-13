@@ -1,0 +1,10 @@
+1.Mybatis 的加载 mapper方式有几种
+4种
+2.selectOne 和 selectUser 区别
+底层本质是一样的
+3.java.lang.reflect.InvocationHandler
+Java 动态代理
+意义 不改变代理的对象的源码的情况下对这个被代理的对象方法增强
+4.mybatis的一级缓存默认是开启还是关闭
+cacheEnabled = true;
+

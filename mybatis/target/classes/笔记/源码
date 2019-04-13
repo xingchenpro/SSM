@@ -1,0 +1,28 @@
+右键 copy reference
+diagram 查看一个类的子类 ctrl + alt + B
+
+获取数据库源
+解析mybatis-config.xml 加载到内存 Configuration
+org.apache.ibatis.session.SqlSessionFactoryBuilder.build(java.io.Reader, java.lang.String, java.util.Properties)
+    >org.apache.ibatis.builder.xml.XMLConfigBuilder
+        >org.apache.ibatis.builder.xml.XMLConfigBuilder.parse //解析
+            >org.apache.ibatis.builder.xml.XMLConfigBuilder.parseConfiguration //mybatis-config 配置文件
+                >org.apache.ibatis.session.defaults.DefaultSqlSessionFactory
+Configuration>Environment>DataSource
+
+SQL 如何获取
+org.apache.ibatis.session.defaults.DefaultSqlSessionFactory.openSession()
+    >org.apache.ibatis.session.defaults.DefaultSqlSessionFactory.openSessionFromDataSource
+        >org.apache.ibatis.session.defaults.DefaultSqlSession
+            >org.apache.ibatis.binding.MapperRegistry.getMapper
+                >org.apache.ibatis.binding.MapperMethod.execute
+                    >org.apache.ibatis.session.SqlSession.selectOne(java.lang.String, java.lang.Object)
+                    >org.apache.ibatis.mapping.MappedStatement.getBoundSql
+
+谁执行拿到的SQL
+>org.apache.ibatis.executor.SimpleExecutor //BaseExecutor>Executor
+    >org.apache.ibatis.executor.Executor.query(org.apache.ibatis.mapping.MappedStatement, java.lang.Object, org.apache.ibatis.session.RowBounds, org.apache.ibatis.session.ResultHandler)
+        >org.apache.ibatis.executor.BaseExecutor.createCacheKey //构建缓存
+            >org.apache.ibatis.executor.SimpleExecutor.doQuery
+                >org.apache.ibatis.session.Configuration.newStatementHandler
+                    >org.apache.ibatis.executor.SimpleExecutor.prepareStatement
