@@ -1,6 +1,5 @@
 package com.javahly.spring;
 
-import com.javahly.service.RoleService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -14,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2019/5/16
  */
-@Component
+//@Component
 public class SiriusBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {

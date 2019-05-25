@@ -19,11 +19,9 @@ public class Test {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(Appconfig.class);
         //System.out.println(ac.getBean(UserService.class));
 
-
         /*UserService u = ac.getBean(UserService.class);
         UserService u1 = ac.getBean(UserService.class);
         System.out.println(u==u1);*/
-
 
         //ac.getBean(RoleService.class);
         ac.getBean(UserService.class);

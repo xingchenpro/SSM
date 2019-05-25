@@ -10,12 +10,16 @@ this.refresh();//最重要，生命周期
     //实例化不是懒加载(延迟加载)的所有单例对象,完成单例对象的实例化(如何初始化Bean)
         >>org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization
         //执行当前整个项目中的BeanFactoryPostProcessor，执行实现BeanFactoryPostProcessor的实现类
-        >>org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors
+            >>org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors
             >>org.springframework.beans.factory.config.ConfigurableListableBeanFactory.preInstantiateSingletons
+                >>org.springframework.beans.factory.support.AbstractBeanFactory.getBean(java.lang.String)
+                    >>org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean
+                        >>org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(java.lang.String)单例池
 
 
 
-
+第一个getSingleton//单例池拿，拿不到缓存池拿，拿不到返回null
+第二个getSingleton//单例池拿，拿不到new
                 this.postProcessBeanFactory(beanFactory);
                 this.invokeBeanFactoryPostProcessors(beanFactory);
                 this.registerBeanPostProcessors(beanFactory);
@@ -26,13 +30,16 @@ this.refresh();//最重要，生命周期
                 this.finishBeanFactoryInitialization(beanFactory);
                 this.finishRefresh();
 
-Spring 扫描到类，new一个对象，放到Map中
+Spring 扫描到类，放到Map和List中
 private final Map<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap(256);
-
+private volatile List<String> beanDefinitionNames = new ArrayList(256);
+循环List，实例化对象
 
 
 允许程序员干预初始化过程
-Bean被实例化根类没有关系，根BeanFactory有关系
+
+1.Bean被实例化根类没有关系，根BeanFactory有关系
+
 
 Bean： Spring容器中的对象
 
@@ -46,3 +53,15 @@ https://blog.csdn.net/weixin_32916879/article/details/81350968
 
 
 ctrl+alt+b 跳到接口的实现类
+懒加载，开始不new getBean才new出来
+
+BeanFactory 和 FactoryBean
+实例化过程不一样
+FactoryBean 不在Map中
+
+spring循环引用
+
+lockup-method
+
+剑指spring源码
+https://www.cnblogs.com/CodeBear/p/10374261.html

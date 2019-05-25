@@ -62,3 +62,6 @@ FactoryBean 不在Map中
 spring循环引用
 
 lockup-method
+
+剑指spring源码
+https://www.cnblogs.com/CodeBear/p/10374261.html

@@ -1,5 +1,6 @@
 package com.javahly.service;
 
+import com.javahly.dao.UserDao;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +11,16 @@ import org.springframework.stereotype.Component;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2019/5/16
  */
-@Component
-@Scope("prototype")
+
 public class UserService {
+
+    private UserDao dao;
+
+    public UserService(UserDao userDao) {
+        this.dao = userDao;
+    }
+
+    public void service(){
+        dao.test();
+    }
 }
