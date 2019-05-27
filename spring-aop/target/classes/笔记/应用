@@ -1,0 +1,23 @@
+
+@Pointcut("execution( * *com.hly.dao.*.*(..))")
+execution(modifiers-pattern? ret-type-pattern declaring-type-pattern?name-pattern(param-pattern) throws-pattern?)
+第一颗星是限定权限
+第二颗星是限定返回类型
+
+@Pointcut("execution( * *com.hly.dao.*.*(int))")
+@Pointcut("execution( * *com.hly.dao.*.*(..))")
+(..) 表示任意参数类型
+@Pointcut("execution( * *com.hly.dao.*.*(String,..))")
+表示第一个是字符串，后面任意参数都可匹配
+
+within(com.xyz.service.*)
+within定义到的最小粒度是类
+
+@Pointcut("args(String)")
+根据传入的参数类型匹配，与方法名和包名无关
+
+this 表示代理对象的匹配类型
+@Pointcut("this(com.hly.dao.IndexDaoImpl)")//this(代理对象)
+
+target 表示目标对象的匹配类型
+@Pointcut("target(com.hly.dao.IndexDaoImpl)")//target(目标对象)

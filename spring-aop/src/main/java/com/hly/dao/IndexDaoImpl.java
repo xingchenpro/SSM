@@ -1,6 +1,5 @@
 package com.hly.dao;
 
-import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @CSDN :blog.csdn.net/Sirius_hly
  * @date :2019/4/10
  */
-@Component
+@Component("indexDaoImpl")
 public class IndexDaoImpl implements IndexDao {
 
     @Override

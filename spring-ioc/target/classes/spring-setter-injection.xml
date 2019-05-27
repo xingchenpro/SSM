@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--ref:引用一个Bean-->
+    <!--Setter注入，将SetterDaoImp注入SetterDao-->
+    <bean id="setterService" class="com.javahly.service.SetterInjectionService">
+        <property name="setterDao" ref="SetterDaoImp"></property>
+    </bean>
+
+    <bean id="SetterDaoImp" class="com.javahly.service.impl.SetterInjectionDaoImpl"></bean>
+
+
+</beans>

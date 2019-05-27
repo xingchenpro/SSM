@@ -15,18 +15,22 @@ import org.springframework.stereotype.Component;
 @Aspect//定义切面
 public class MyAspect {
 
+
     //定义切点
     //找到切点的方法
     //pointCut 避免多次编写表达式
-    @Pointcut("execution(* com.hly.dao.*.*(..))")
+    //@Pointcut("args(String)")
+    @Pointcut("this(com.hly.dao.IndexDao)")//this(指向代理对象类型)
+    //@Pointcut("target(com.hly.dao.IndexDao)")//target(指向目标对象类型)
+    //@Pointcut("execution( * *com.hly.dao.*.*(..))&&args(Integer)")
+    //@Pointcut("execution(* com.hly.dao.*.*(..))")
     public void pointCut(){
 
     }
-
     //找到pointCut()
     //前置通知
     //给通知传递参数
-    @Before("execution(* com.hly.dao.*.*(..))"+"&& args(str)")
+    @Before("execution(* com.hly.dao.*.*(..))&& args(str)")
     public void before(String str) {
         System.out.println(str+":"+"advice-before...");
     }

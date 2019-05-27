@@ -1,0 +1,80 @@
+https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html
+
+DI，DL是实现IOC的一种技术手段
+ORM对象关系映射，Mybatis实现ORM
+配置信息
+Spring是一个产品，一个项目
+
+注入方式
+构造方法
+Setter
+
+接口注入//不支持
+
+Spring自动装配
+4种
+default-autowire="default"//不使用自动装配，使用手动装配
+default-autowire="byType"//根据类型装配，只能有一个实现类，不然报错
+default-autowire="byName" //和SetXX的XX名有关
+default-autowire="constructor"
+
+注解+@Autowired 默认采用ByType，ByType没有找到根据ByName，没有找到报错。
+注解+@Resource 默认采用ByName，也可以指定type和name
+
+@Component是@Service等的父类
+@Quakity
+
+懒加载
+bean 在get的时候才创建出来
+
+@Scope
+single 单例
+prototype 原型
+
+single bean 引用用prototype类型的bean会失去作用
+single bean只会初始化一次，多个方法无法提供不同的prototype类型的bean
+解决方法：1.实现ApplicationContextAware
+2.@Lockup
+
+生命周期
+生命周期回调
+
+循环引用
+放到一个缓冲区
+prototype不能相互引用
+
+@Profile("AppConfig1")
+annotationConfigApplicationContext.getEnvironment().setActiveProfiles("AppConfig1");
+
+spring编程的风格
+schemal-based-------xml
+annotation-based-----annotation
+java-based----java Configuration
+https://blog.csdn.net/wanglei303707/article/details/88171820
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
