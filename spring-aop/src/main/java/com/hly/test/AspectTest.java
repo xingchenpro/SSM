@@ -23,7 +23,6 @@ public class AspectTest {
         IndexDao indexDao = annotationConfigApplicationContext.getBean(IndexDao.class);
         for (int i = 0; i < 2; i++)
             indexDao.index("Hello");
-
     }
 
 }

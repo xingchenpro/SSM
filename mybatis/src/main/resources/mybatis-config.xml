@@ -23,4 +23,5 @@
     <mappers>
         <mapper resource="mybatis/UserMapper.xml"></mapper>
     </mappers>
+
 </configuration>

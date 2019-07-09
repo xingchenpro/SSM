@@ -43,10 +43,14 @@ single bean只会初始化一次，多个方法无法提供不同的prototype类
 放到一个缓冲区
 prototype不能相互引用
 
+@Profile("AppConfig1")
+annotationConfigApplicationContext.getEnvironment().setActiveProfiles("AppConfig1");
 
-
-
-
+spring编程的风格
+schemal-based-------xml
+annotation-based-----annotation
+java-based----java Configuration
+https://blog.csdn.net/wanglei303707/article/details/88171820
 
 
 
